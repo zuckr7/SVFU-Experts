@@ -13,7 +13,7 @@ class TheTrainingProgram:
 
     def complete_program(self):
         # Метод для завершения программы обучения
-        print(f"Программа обучения '{self.name}' завершена. Поздравляем!")
+        print(f"Программа обучения '{self.name}' завершена.")
 
     def get_materials(self):
         # Метод для получения материалов программы обучения
