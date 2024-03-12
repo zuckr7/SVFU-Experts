@@ -10,7 +10,6 @@ class TheTrainingProgram:
         print(f"Программа обучения '{self.name}' началась.")
         print(f"Продолжительность: {self.duration}.")
         print(f"Инструктор: {self.instructor}.")
-        print("Давайте начнем учиться!")
 
     def complete_program(self):
         # Метод для завершения программы обучения
