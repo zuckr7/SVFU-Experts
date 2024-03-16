@@ -4,10 +4,10 @@ from django.db import models
 
 class Speciality(models.Model):
     CodePS = models.CharField("Код ПС",max_length=2)
-    FullCode = models.CharField("Полный Код",max_length=6)
+    FullCode = models.CharField("Полный Код",max_length=15)
     Name = models.CharField("Наименование",max_length=300)
     RegNumber = models.CharField("Регистрационный номер",max_length=20)
-    Description = models.TextField("Основная цель вида профессиональной деятельности")
+    Goal = models.TextField("Основная цель вида профессиональной деятельности")
     OccupationGroup = models.ManyToManyField("Группа занятий")
     EconomicActivity = models.ManyToManyField("Виды экономической деятельности")
 
