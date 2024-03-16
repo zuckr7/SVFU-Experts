@@ -21,5 +21,8 @@ class TrainingProgram(models.Model):
     language = models.IntegerField("Язык обучения", choices=EDU_LANG)
     description = models.TextField("Описание")
     zet = models.IntegerField("ЗЕТ", validators=[MinValueValidator(1), MaxValueValidator(361)])
+
+    def __str__(self):
+        return self.number + ' ' + self.brief_name
     
 
