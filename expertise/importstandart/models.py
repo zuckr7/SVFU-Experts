@@ -12,7 +12,15 @@ from rest_framework import routers,serializers,viewsets
 #     codeOKVED = models.CharField("Код ОКВЭД",max_length=10)
 #     name = models.CharField("Наименование",max_length=300)
 
+class ProfStandart(models.Model):
+    title = models.CharField("Наименование",max_length=300)
+    regNumber = models.CharField("Регистрационный номер",max_length=20)
+    codePS = models.CharField("Код ПС",max_length=15)
+    goal = models.TextField("Основная цель вида профессиональной деятельности")
+    list_okz = models.JSONField("Группа занятий")
+    list_okved = models.JSONField("Отнесение к видам ЭД")
 
+    
 class WorkFunction(models.Model):
     code = models.CharField("Код",max_length=50)
     name = models.CharField("Наименование",max_length=255)
@@ -36,10 +44,3 @@ class ParticularFunction(WorkFunction):
     knowledge = models.JSONField()
 
 
-class ProfStandart(models.Model):
-    title = models.CharField("Наименование",max_length=300)
-    regNumber = models.CharField("Регистрационный номер",max_length=20)
-    codePS = models.CharField("Код ПС",max_length=15)
-    goal = models.TextField("Основная цель вида профессиональной деятельности")
-    list_okz = models.JSONField("Группа занятий")
-    list_okved = models.JSONField("Отнесение к видам ЭД")
