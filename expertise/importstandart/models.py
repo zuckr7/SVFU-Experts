@@ -20,13 +20,18 @@ class ProfStandart(models.Model):
     list_okz = models.JSONField("Группа занятий")
     list_okved = models.JSONField("Отнесение к видам ЭД")
 
+    def __str__(self):
+        return self.title
+
     
 class WorkFunction(models.Model):
     code = models.CharField("Код",max_length=50)
     name = models.CharField("Наименование",max_length=255)
     qualification = models.CharField("Квалификация",max_length=255)
+    
     class Meta:
         abstract = True
+    
 
 
 class GeneralFunction(WorkFunction):
@@ -36,11 +41,17 @@ class GeneralFunction(WorkFunction):
     requirement_experience = models.JSONField()
     special_conditions = models.JSONField()
 
+    def __str__(self):
+        return self.name
+
 
 class ParticularFunction(WorkFunction):
     general_function = models.ForeignKey(GeneralFunction, related_name='particular_functions', on_delete=models.CASCADE)
     labor_act = models.JSONField()
     req_skill = models.JSONField()
     knowledge = models.JSONField()
+
+    def __str__(self):
+        return self.name
 
 
